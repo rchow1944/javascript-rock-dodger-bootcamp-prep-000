@@ -62,7 +62,7 @@ function createRock(x) {
 
   // Hmmm, why would we have used `var` here?
   var top = rock.style.top = 0;
-  long animId;
+  let animId;
 
   /**
    * Now that we have a rock, we'll need to append
