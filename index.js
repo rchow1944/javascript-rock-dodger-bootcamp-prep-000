@@ -62,6 +62,7 @@ function createRock(x) {
 
   // Hmmm, why would we have used `var` here?
   var top = rock.style.top = 0;
+  long animId;
 
   /**
    * Now that we have a rock, we'll need to append
@@ -96,7 +97,7 @@ function createRock(x) {
      */
      
      if(top < GAME_HEIGHT) {
-       window.requestAnimationFrame(moveRock);
+       animId = window.requestAnimationFrame(moveRock);
      } else {
        rock.remove();
      }
