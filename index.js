@@ -62,7 +62,6 @@ function createRock(x) {
 
   // Hmmm, why would we have used `var` here?
   var top = rock.style.top = 0;
-  let animId;
 
   /**
    * Now that we have a rock, we'll need to append
@@ -84,7 +83,6 @@ function createRock(x) {
      */
     if(checkCollision(rock)) {
       ROCKS.push(rock);
-      window.cancelAnimationFrame(animId);
       return endGame();
     }
     /**
@@ -98,8 +96,7 @@ function createRock(x) {
      */
      
      if(top < GAME_HEIGHT) {
-       animId = window.requestAnimationFrame(moveRock);
-       console.log(animId);
+       window.requestAnimationFrame(moveRock);
      } else {
        rock.remove();
      }
@@ -107,7 +104,7 @@ function createRock(x) {
   }
 
   // We should kick of the animation of the rock around here
-  animId = window.requestAnimationFrame(moveRock);
+  window.requestAnimationFrame(moveRock);
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   ROCKS.push(rock)
