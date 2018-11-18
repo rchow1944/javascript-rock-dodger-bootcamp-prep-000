@@ -84,6 +84,7 @@ function createRock(x) {
      */
     if(checkCollision(rock)) {
       ROCKS.push(rock);
+      window.cancelAnimationFrame(animId);
       return endGame();
     }
     /**
